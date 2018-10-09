@@ -1,0 +1,1 @@
+c3p0-config.xml & server.properties 文件需要放置在工作文件夹目录(user.dir)下而不是程序 classpath 根目录下！！！！

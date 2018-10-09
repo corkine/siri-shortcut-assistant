@@ -1,0 +1,56 @@
+<c3p0-config>
+    <named-config name="Killer">
+        <property name="user">youruser</property>
+        <property name="password">yourpassword</property>
+        <property name="jdbcUrl">jdbc:mysql://yoursql.yourdomain.com:prot/database?useSSL=false</property>
+        <property name="driverClass">com.mysql.jdbc.Driver</property>
+
+        <property name="acquireIncrement">5</property>
+        <property name="initialPoolSize">3</property>
+        <property name="minPoolSize">3</property>
+        <property name="maxPoolSize">30</property>
+
+        <property name="maxStatements">10</property>
+        <property name="maxStatementsPerConnection">5</property>
+
+        <user-overrides user="master-of-the-universe">
+            <property name="acquireIncrement">1</property>
+            <property name="initialPoolSize">1</property>
+            <property name="minPoolSize">1</property>
+            <property name="maxPoolSize">5</property>
+            <property name="maxStatementsPerConnection">50</property>
+        </user-overrides>
+    </named-config>
+
+    <named-config name="Caller">
+        <property name="user">yourname</property>
+        <property name="password">yourpassword</property>
+        <property name="jdbcUrl">jdbc:mysql://yoursql.yourdomain.com:prot/database?useSSL=false</property>
+        <property name="driverClass">com.mysql.jdbc.Driver</property>
+
+        <property name="acquireIncrement">1</property>
+        <property name="initialPoolSize">1</property>
+        <property name="minPoolSize">1</property>
+        <property name="maxPoolSize">2</property>
+
+        <property name="maxStatements">10</property>
+        <property name="maxStatementsPerConnection">5</property>
+    </named-config>
+
+
+    <named-config name="realCaller">
+        <property name="user">yourname</property>
+        <property name="password">yourpassword</property>
+        <property name="jdbcUrl">mysql://yoursql.yourdomain.com:prot/database?useSSL=false</property>
+        <property name="driverClass">com.mysql.jdbc.Driver</property>
+
+        <property name="acquireIncrement">1</property>
+        <property name="initialPoolSize">1</property>
+        <property name="minPoolSize">1</property>
+        <property name="maxPoolSize">2</property>
+
+        <property name="maxStatements">10</property>
+        <property name="maxStatementsPerConnection">5</property>
+    </named-config>
+
+</c3p0-config>

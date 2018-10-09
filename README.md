@@ -47,7 +47,34 @@ Siri 语音执行需要在 捷径 APP，使用 ssh 登陆到此服务器，cd �
 
 你可以在 c3p0-config 配置 named-config 为 Caller 的组策略，user 对应 mysql 用户名，password 对应密码，jdbcUrl 按照 jdbc 格式写 mysql 的地址、数据库，使用 useSSL = false 参数指定数据库不使用 SSL。服务端因为每次仅仅执行一条语句，因此数据池尽可能设置少的连接数即可，这里主要是为 PC 调用端服务的。在 server.properties 中指定 server_config_name 为 Caller，即可调用此数据池配置策略。
 
-注意，这两个配置文件必须位于 siri.jar 同目录下。
+注意，这两个配置文件必须位于 Siri.jar 同目录下。
 
 ## Siri RMI Killer
 
+在需要执行命令的电脑上打开 CMD，切换到 Siri.jar 同名目录，执行 `java -cp Siri.jar com.mazhangjing.shortcut.dbkiller.Killer` 即可运行服务。
+
+同样的，配置文件 c3p0-config 和 server.properties 必须位于 Siri.jar 同名目录下。此外，需要指定 server.properties 中 pc_config_name 对应的 c3p0-config 的具名策略，注意，客户端因为每10s检查一次数据库，因此，需要保证一定量的数据库连接，默认的配置为 Caller，数据库连接为 5。
+
+## 控制多台设备
+
+你可以同时控制多台电脑，方法是：在第二台电脑上复制一份程序，在 server.properties 中设置新的 pc_id, 然后在服务器复制一份程序到新目录下，比如原来的叫做 siri-1 目录，现在复制到 siri-2 目录，然后设置 需要控制的 pc_id 为第二台电脑的 pc_id，执行的时候，只要分别用 `cd siri-1; java -jar Siri.jar "command for a"` `cd siri-2; java -jar Siri.jar "command for b"` 即可分别向两台电脑发送命令。
+
+## 程序运行截图
+
+### watchOS 5
+
+![](demo/IMG_1291.PNG)
+
+![](demo/IMG_1292.PNG)
+
+### ios 12
+
+![](demo/IMG_1294.PNG)
+
+![](demo/IMG_1298.PNG)
+
+![](demo/IMG_1296.PNG)
+
+## Download
+
+![Siri.jar](dist.rar)
