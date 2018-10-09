@@ -75,4 +75,6 @@ Siri 语音执行需要在 捷径 APP，使用 ssh 登陆到此服务器，cd �
 
 ## Download
 
-[Siri.jar](dist.rar)
+siri shortcut server/client: [Siri.jar](dist.rar)
+
+siri shortcut icloud share: [go.mazhangjing.com/shortcut-demo](http://go.mazhangjing.com/shortcut-demo)
