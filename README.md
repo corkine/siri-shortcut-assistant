@@ -49,6 +49,21 @@ Siri 语音执行需要在 捷径 APP，使用 ssh 登陆到此服务器，cd �
 
 注意，这两个配置文件必须位于 Siri.jar 同目录下。
 
+SQL Server 必须创建名称为 customer 的表，SQL 命令如下：
+
+```sql
+CREATE TABLE `command` (
+  `com_id` int(11) NOT NULL AUTO_INCREMENT,
+  `pc_id` int(11) DEFAULT NULL,
+  `server_id` int(11) DEFAULT NULL,
+  `command` varchar(100) NOT NULL,
+  `result` varchar(100) DEFAULT NULL,
+  `status` int(11) DEFAULT '0',
+  PRIMARY KEY (`com_id`),
+  UNIQUE KEY `command_com_id_uindex` (`com_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=60 DEFAULT CHARSET=utf8 COMMENT='mysql message for siri shortcut'
+```
+
 ## Siri RMI Killer
 
 在需要执行命令的电脑上打开 CMD，切换到 Siri.jar 同名目录，执行 `java -cp Siri.jar com.mazhangjing.shortcut.dbkiller.Killer` 即可运行服务。
