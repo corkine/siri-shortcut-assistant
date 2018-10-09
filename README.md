@@ -55,11 +55,11 @@ Siri 语音执行需要在 捷径 APP，使用 ssh 登陆到此服务器，cd �
 
 同样的，配置文件 c3p0-config 和 server.properties 必须位于 Siri.jar 同名目录下。此外，需要指定 server.properties 中 pc_config_name 对应的 c3p0-config 的具名策略，注意，客户端因为每10s检查一次数据库，因此，需要保证一定量的数据库连接，默认的配置为 Caller，数据库连接为 5。
 
-## 控制多台设备
+## Control multiple devices
 
 你可以同时控制多台电脑，方法是：在第二台电脑上复制一份程序，在 server.properties 中设置新的 pc_id, 然后在服务器复制一份程序到新目录下，比如原来的叫做 siri-1 目录，现在复制到 siri-2 目录，然后设置 需要控制的 pc_id 为第二台电脑的 pc_id，执行的时候，只要分别用 `cd siri-1; java -jar Siri.jar "command for a"` `cd siri-2; java -jar Siri.jar "command for b"` 即可分别向两台电脑发送命令。
 
-## 程序运行截图
+## Demo
 
 ### watchOS 5
 
@@ -73,8 +73,6 @@ Siri 语音执行需要在 捷径 APP，使用 ssh 登陆到此服务器，cd �
 
 ![](demo/IMG_1298.PNG)
 
-![](demo/IMG_1296.PNG)
-
 ## Download
 
-![Siri.jar](dist.rar)
+[Siri.jar](dist.rar)
